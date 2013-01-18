@@ -1,0 +1,18 @@
+extend ../layout
+
+block content
+  script(type='text/javascript', src='/javascripts/test.js')
+  #test
+  h1= title
+  p Welcome to #{title}
+  .row.display
+    .twelve.columns
+      .row.display
+        .four.columns .four
+        .four.columns
+          .row.display
+            .four.columns .four
+            .four.columns .four
+            .four.columns .four
+        .four.columns .four
+
