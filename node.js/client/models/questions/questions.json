@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Adding colors to a few cells in a table view", 
+        "id": "add-colors-to-table-cell", 
+        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+        "snippet": "I've looked at dozen cellForRowAtIndexPath:h", 
+        "tags": ["javascript","c++"],        
+        "asktime": "2014-1-1 07:07:07",
+        "answerid": ["answerid1", "answerid3"],
+        "askerid":  "chenliang",
+        "asker_reputation": 1477,
+        "votes": 2,
+        "answers": 1,
+        "views": 2
+    }, 
+    {
+        "title": "How angular use socket.io", 
+        "id": "angular-use-socket", 
+        "imageUrl": "img/phones/motorola-xoom.0.jpg",     
+        "snippet": "angular.dfgdgh", 
+        "tags": ["javascript","c++"],        
+        "asktime": "2014-1-1 07:07:07",
+        "answerid": ["answerid2", "answerid4"],
+        "askerid": "chenliang",
+        "asker_reputation": 1477,
+        "votes": 2,
+        "answers": 1,
+        "views": 2
+    }
+]
+
+
+$ curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elastic Search"
+}'
+I now have a .json file and I want to index this into Elasticsearch. I've tried something like this to no success:
+
+curl -XPOST 'http://jfblouvmlxecs01:9200/test/test/1' -d lane.json
+How do I import a .json file? Are there steps I need to take first to ensure the mapping is correct?"
+        "tags": ["javascript","c++"],        
+        "asktime": "2014-1-1 07:07:07",
+        "answerid": ["answerid1", "answerid3"],
+        "askerid":  "chenliang",
+        "asker_reputation": 1477,
+        "votes": 2,
+        "answers": 1,
+        "views": 2
+}

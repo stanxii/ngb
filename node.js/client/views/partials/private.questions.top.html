@@ -1,0 +1,53 @@
+
+<row>  
+  <div class="col-md-9">
+    <a href="#">Inbox <span class="badge">42</span></a>
+	<hr class="tips-hr">
+      <ul class="questions">
+              <li ng-repeat="question in questions "
+                  class="question-item">
+				  <div class="row top-content">
+					<div class="col-md-2 top-tips">
+						<span class="tips-lan lpad">
+						   <span>{{question.answers.length}}</span><label class="tips-answer">回答</label>		   
+						</span>
+						<span class="lpad">
+						   <span>{{question.answers.length}}</span><label class="tips-answer">投票</label>				   
+						</span>
+					</div>
+					<div class="col-md-9">
+						<span>
+							<a class="top-a" href="#/questions/{{getQid(question)}}" > {{question.title}}</a>
+						</span>
+						<div>							
+							<span class="edit-field-overlay meta-viewsum">
+								<img class="tips-img" src="../img/signal.ico" />
+								122次浏览
+							</span>
+							<ul class="edit-field-overlay meta-tags">
+								<li>
+									<img class="tips-img" src="../img/tag.ico" />
+								</li>
+								<li ng-repeat="tag in  questions.tags">
+									{{question.tags}}
+								</li>								
+							</ul>
+							<span class="edit-field-overlay meta-datetime"><img class="tips-img" src="../img/clock.ico" /> {{question.asktime}}</span>							
+						</div>
+						
+					</div>
+					<div class="col-md-1">
+						<a href="#"><span class="meta-askerimg"><img class="tips-askerimg" src="../img/user-unknown.ico" /></span></a>
+					</div>
+				  </div>
+				  <hr class="tips-hr">
+              </li>
+
+    </ul>
+  </div>
+  <div class="col-md-3">
+  </div>
+</row>    
+
+
+<link rel="stylesheet" href="/css/questions.top.css">

@@ -1,0 +1,65 @@
+<row>
+    <div class="col-md-12">
+        <label for="title"><h2>提出新问题:</h2></label>
+    </div>
+</row>
+
+<row>  
+  <div class="col-md-9">    	
+    	<input id="title" name="title" type="text" maxlength="300" tabindex="100" class="ask-title-field" data-min-length="15" data-max-length="150"  ng-model = "question.title" placeholder="标题,用一句话说清您的问题。">
+    	<br/>
+    	<span class="edit-field-overlay">您有什么编程问题？请上代码,越详细越好！</span>
+
+        <textarea class="questions-ask-textarea" 
+               pagedown-admin=""
+               ng-model="question.description"></textarea>
+		<br/>
+       	<label>问题标签（至少 1 个):</label>
+        <input id="tagnames" name="tagnames" type="text" class="ask-tag-field" value="" tabindex="103">
+        <span class="edit-field-overlay">至少一个标签，比如(mysql java regex), 最多5个标签.</span>
+    	
+    	<div class="form-item">
+            <div>
+                <input id="11" type="checkbox">
+                <label for="as" style="display: inline">将新的答案通过邮件发送给我.</label>
+                <a id="s" href="#">(settings)</a>
+            </div>
+            
+        </div>
+
+		<div id="ask-btn-field">
+			<br/>
+			<button type="button" ng-click="askQuestion()" class="btn btn-primary btn-lg" id="submit-button" tabindex="120">
+			  <span class="glyphicon glyphicon-ok"></span> 提交问题
+			</button>			
+		</div>
+        <br/><br/><br/>
+    </div>
+    
+    <div class="col-md-3">
+        <aside class="warn edit-guide">
+            <h3>怎么提问</h3>
+            <ul>
+                <li>您问的问题是否与技术有关？</li>
+                <li>我们最欢迎能有明确答案的问题，而不只是讨论而已</li>
+                <li>描述问题细节，如果有代码，尽量上代码。包括您自己的解答方案。</li>
+                <li>提问前，请先搜索是否您的问题别人已经问过？如果问过不要在重复提问。</li>
+            </ul>
+            <h3>怎么排版</h3>
+            <ul>
+                <li>两个图片之间回车换行</li>
+                <li>代码前空4个空格，可以美化代码显示</li>
+                <li>超级连接。请用上面的超链接插入</li>
+            </ul>
+        </aside>
+    </div>    
+
+</row>
+
+<!--
+
+    <script src="http://pagedown.googlecode.com/hg/Markdown.Converter.js"></script>
+    <script src="http://pagedown.googlecode.com/hg/Markdown.Sanitizer.js"></script>
+    <script src="http://pagedown.googlecode.com/hg/Markdown.Editor.js"></script>
+
+    -->

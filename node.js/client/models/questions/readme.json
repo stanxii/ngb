@@ -1,0 +1,14 @@
+
+
+//How to add question.json to Elastic Search Index Server .
+
+### use json data string to add Elastic
+$ curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{
+    "user" : "kimchy",
+    "post_date" : "2009-11-15T14:12:12",
+    "message" : "trying out Elastic Search"
+}'
+
+### I now have a .json file and I want to index this into Elasticsearch. I've tried something like this to no success:
+
+curl -XPOST 'http://jfblouvmlxecs01:9200/test/test/1' -d @lane.json

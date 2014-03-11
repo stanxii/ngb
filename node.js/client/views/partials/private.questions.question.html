@@ -1,0 +1,74 @@
+<row>
+    <div class="col-md-12">
+       <label for="title"><h2>{{question.title}}</h2></label>
+    </div>
+</row>
+<row>        
+    <div class="form">       
+        <div class="col-md-9">
+            <pre class="prettyprint prettyprinted ask-tag-field" style>
+				<code>
+					{{question.description}}
+				</code>
+			</pre>
+			</br>
+			<label>{{question.answers.length>0?question.answers.length:0}}个回答：</label>
+			<hr>
+			<div>				
+				<div ng-repeat="answer in question.answers">					
+					<pre class="prettyprint prettyprinted ask-tag-field" style>					
+						<code>
+							'{{answer.description}}'
+						</code>
+					</pre>
+					<div class="answer-tag-field">
+						<div class="question-answer">
+							<div>
+								<label class="edit-field-overlay">{{ answer.answer_dt }}</label>
+							</div>
+							<div>
+								<img src= '{{ answer.imageUrl }}' />
+								<label>{{ answer.answer-user }}</label>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>			
+			<br/>
+			<br/>
+			<br/>
+			<div class="youranswer">
+				<label>你的回答:</label>
+				<textarea class="questions-ask-textarea" 
+					   pagedown-admin=""
+					   ng-model="newanswer.description">
+				</textarea>
+				<br/>
+			</div>
+			<div id="question-btn-field">
+				<br/>
+				<button type="button" ng-click="submitAnswer()" class="btn btn-primary btn-lg" id="submit-button">
+				  <span class="glyphicon glyphicon-ok"></span> 提交
+				</button>	
+				<br/>
+				<br/>
+			</div>
+		</div>
+        <div class="col-md-3">
+            <aside>
+                <ul>
+                    <li>提问时间 今天</li>
+                    <li>看过  22次</li>
+                    <li>active 今天</li>
+                </ul>
+            </aside>
+            <aside class="warn edit-guide">
+                <h3>提问指南</h3>
+                <ul>
+                    <li>内容与技术相关，有明确的答案，有代码贴代码，附上已尝试过的解决方案</li>
+                    <li>良好的排版，正确使用 Markdown 语法</li>
+                </ul>
+            </aside>
+       
+
+</row>

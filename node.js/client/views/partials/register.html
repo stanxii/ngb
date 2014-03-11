@@ -1,0 +1,38 @@
+<h1>Register</h1>
+<form ng-submit="register()" name="registerForm" class="form-horizontal">
+  <div class="control-group">
+    <label for="username" class="control-label">Username</label>
+    <div class="controls">
+      <input type="text" ng-model="username" placeholder="Username" name="username" required="required" ng-minlength="1" ng-maxlength="20" autofocus="autofocus"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label for="password" class="control-label">Password</label>
+    <div class="controls">
+      <input type="password" ng-model="password" placeholder="Password" name="password" required="required" ng-minlength="5" ng-maxlength="60"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="radio inline">
+      <input type="radio" name="role" ng-model="role" id="adminRole" ng-value="userRoles.admin"/>Administrator
+    </label>
+    <label class="radio inline">
+      <input type="radio" name="role" ng-model="role" id="adminRole" ng-value="userRoles.user"/>Normal user
+    </label>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" ng-disabled="registerForm.$invalid" class="btn">Submit</button>
+    </div>
+  </div>
+  <div ng-show="registerForm.$invalid &amp;&amp; registerForm.$dirty" class="alert alert-error"><strong>Please correct the following errors:</strong>
+    <ul>
+      <li ng-show="registerForm.username.$error.required">Username is required</li>
+      <li ng-show="registerForm.username.$error.minlength">Username has to be at least 1 character long</li>
+      <li ng-show="registerForm.username.$error.maxlength">Username has to be at most 20 character long</li>
+      <li ng-show="registerForm.password.$error.required">Password is required</li>
+      <li ng-show="registerForm.password.$error.minlength">Password must be at least 5 characters long</li>
+      <li ng-show="registerForm.password.$error.maxlength">Password must be at most 60 characters long</li>
+    </ul>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+{
+        "title": "Create file using javascript code not working", 
+        "id": 1, 
+        "imageUrl": "", 
+        "description": 'This code is not working in any Browser
+
+                function Submit1_onclick() {
+                    var fso, f1, ts;
+                    var ForWriting = 2;
+                    fso = new ActiveXObject("Scripting.FileSystemObject");
+                    fso.CreateTextFile("F:/test1.txt");
+                    f1 = fso.GetFile("F:/test1.txt");
+                    ts = f1.OpenAsTextStream(ForWriting, true);
+                    // Write a line with a newline character.
+                    tf.WriteLine("Testing 1, 2, 3.");
+                    // Write three newline characters to the file.
+                    tf.WriteBlankLines(3);
+                    // Write a line.
+                    tf.Write("This is a test.");
+                    tf.Close();
+                }', 
+        "tags": [1, 3],
+        answers: [
+                    {answer:'<code>// Write a line with a newline character.
+            tf.WriteLine("Testing 1, 2, 3.");
+            // Write three newline characters to the file.
+            tf.WriteBlankLines(3);
+            // Write a line.
+            tf.Write("This is a test.");
+            tf.Close();
+            </code>'}
+        ]
+}

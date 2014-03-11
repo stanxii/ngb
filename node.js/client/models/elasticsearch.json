@@ -1,0 +1,168 @@
+
+//mapping users
+curl -XPOST 'http://localhost:9200/users/user/_mapping' -d 
+'{
+    "user" : {
+        "properties" : {
+        	"name" : {"type" : "string", "index" : "analyzed"},
+            "email" : {"type" : "string", "index" : "not_analyzed"},
+            "password" : {"type" : "string", "index" : "not_analyzed"},
+            "regtime" : {"type" : "date", "format": "yyyy-MM-ddTHH:mm:ss"},
+            "role" : {"type" : "string"},            
+            "level" : {"type" : "string"},
+            "_id": {"type": "long"}
+        }
+    }
+}'
+
+//mapping tags
+curl -XPOST 'http://localhost:9200/tags/tag/_mapping' -d 
+'{
+    "question" : {
+        "properties" : {
+        	"name" : {"type" : "string", "index" : "not_analyzed"},
+            "userid" : {"type" : "long"},
+            "description" : {"type" : "string", "null_value" : "na"},
+            "tagtime" : {"type" : "date", "format": "yyyy-MM-ddTHH:mm:ss"},                                
+            "_id": {"type": "long"}
+        }
+    }
+}'
+
+//mapping
+curl -XPOST 'http://localhost:9200/questions/_mapping' -d 
+'{
+    "question" : {
+        "properties" : {
+        	"title" : {"type" : "string", "index" : "analyzed"},
+            "askers" : {"type" : "long", "index" : "not_analyzed"},
+            "tags" : {"type" : "string", "index" : "not_analyzed"},
+            "description" : {"type" : "string", "null_value" : "na"},
+            "asktime" : {"type" : "date", "format": "yyyy-MM-ddTHH:mm:ss"},
+            "priority" : {"type" : "integer"},            
+            "rank" : {"type" : "float"}
+        }
+    }
+}'
+
+//setting shards and replicas index 
+
+curl -XPOST 'http://localhost:9200/questions/' -d '{
+    "settings" : {
+        "index" : {
+            "number_of_shards" : 3,
+            "number_of_replicas" : 2
+        }
+    }
+}'
+
+//////////////////create index
+//create user index
+
+//create tag index
+
+
+//create questions
+
+curl -XPOST 'http://localhost:9200/questions/question/1' -d '{
+	"title": "JS 检测动态插入到页面中的元素",
+	"user":  1,
+	"tags": [1, 2]
+	"description": "不使用延时函数，如果检测某个元素已经被加载到页面中了（可能是通过 ajax 加载的）？",
+	"asktime": "2014-02-18T10:16:58",	
+	"answers":[
+		{
+			"answer-user": "nixinlong",
+			"description": 'Im trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answer_dt": "2014-02-18T10:16:59"			
+		},
+		{
+			"answer-user": "stan",
+			"description": 'Hemm trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answer_dt": "2014-02-19T08:16:59"
+		}
+	]
+
+}'
+
+curl -XPOST 'http://localhost:9200/questions/question/2' -d '{
+	"title": "JS 检测动态插入到页面中的元素",
+	"user":  1,
+	"tags": [1, 2]
+	"description": "不使用延时函数，如果检测某个元素已经被加载到页面中了（可能是通过 ajax 加载的）？",
+	"asktime": "2014-02-18T10:16:58",
+	"answers":[
+		{
+			"answer-user": "nixinlong",
+			"description": 'Im trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answertime": "2014-02-18T10:16:59"			
+		},
+		{
+			"answer-user": "stan",
+			"description": 'Hemm trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answertime": "2014-02-19T08:16:59"
+		}
+	]
+
+}'
+
+curl -XPOST 'http://localhost:9200/questions/question/3' -d '{
+	"title": "JS 检测动态插入到页面中的元素",
+	"user":  1,
+	"tags": [1, 2]
+	"description": "不使用延时函数，如果检测某个元素已经被加载到页面中了（可能是通过 ajax 加载的）？",
+	"asktime": "2014-02-18T10:16:58",
+	"answers":[
+		{
+			"answer-user": "nixinlong",
+			"description": 'Im trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answertime": "2014-02-18T10:16:59"			
+		},
+		{
+			"answer-user": "stan",
+			"description": 'Hemm trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answertime": "2014-02-19T08:16:59"
+		}
+	]
+
+}'
+
+curl -XPOST 'http://localhost:9200/questions/question/4' -d '{
+	"title": "JS 检测动态插入到页面中的元素",
+	"user":  1,
+	"tags": [1, 2]
+	"description": "java 加载 不使用延时函数，如果检测某个元素已经被加载到页面中了（可能是通过 ajax 加载的）？",
+	"asktime": "2014-02-18T10:16:58",
+	"answers":[
+		{
+			"answer-user": "nixinlong",
+			"description": 'Im trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answertime": "2014-02-18T10:16:59"			
+		},
+		{
+			"answer-user": "stan",
+			"description": 'Hemm trying to make a text-view which on click shows the contact or when we type any letter its shows suggestions of contact. I'm able to read contact from contact book,now i want a text-view which shows only WHATS-APP contact to select. please help me out to read WHATS APP contacts.',
+			"answertime": "2014-02-19T08:16:59"
+		}
+	]
+
+}'
+
+
+
+////questions/tagged/java
+
+curl -XPOST 'http://localhost:9200/coredump/questions/1' -d @add-colors-to-table-cell.json
+
+//search
+
+curl -XPOST 'http://localhost:9200/questions/4' -d '{
+
+curl -XPOST 'http://localhost:9200/coredump/questions/question/_search' -d
+'{
+	"query":{
+		"match":{
+			"title": "加载"
+		}
+	}
+}'

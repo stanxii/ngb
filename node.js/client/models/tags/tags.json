@@ -1,0 +1,30 @@
+[
+    {     
+        "id": 1, 
+        "tag": "javascript",
+        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+        "excerpt": "a dynamically-typed language commonly used for client-side scripting. Use this tag for questions regarding ECMAScript and its dialects/implementations (excluding ActionScript). Unless a …", 
+        "today_asked": 1128,
+        "week_asked": 6324,        
+        "followers": 16000        
+    }, 
+    {     
+        "id": 2, 
+        "tag": "java",
+        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+        "excerpt": 'Java (not to be confused with JavaScript) is a class-based, object-oriented, strongly typed, reflective language and run-time environment (JRE). Java programs are compiled to byte-code and run in a vi…', 
+        "today_asked": 128,
+        "week_asked": 324,        
+        "followers": 6500        
+    },
+    {     
+        "id": 3, 
+        "tag": "jquery",
+        "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+        "excerpt": 'a cross-browser JavaScript library that facilitates DOM traversal, event handling, animation and AJAX interactions.', 
+        "today_asked": 328,
+        "week_asked": 124,        
+        "followers": 3400        
+    }
+]
+

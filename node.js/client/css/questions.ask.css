@@ -1,0 +1,37 @@
+.ask-title-field{	
+	width: 90%;
+	height: 42px;
+}
+
+.edit-field-overlay{
+	color: #999;
+	font-size: 13px;
+	line-height: 35px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ask-tag-field {	
+	width: 90%;
+}
+
+.answer-tag-field {	
+	width: 90%;
+	height: 70px;
+}
+
+.question-answer {	
+	float: right;
+	margin-top: -10px;
+}
+
+.question-answer  label{	
+	margin: 0;
+}
+
+.warn {
+	background: #ffefc6;
+	color: #960;
+	margin-top: -20px;
+}

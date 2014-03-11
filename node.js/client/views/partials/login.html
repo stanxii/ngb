@@ -1,0 +1,35 @@
+<div class="hero-unit">
+  <h3>环保系统!</h3>
+  
+  <p>本系统分为，进料、出渣、水泵、温度控制等等模块。实现自动化环保监控和管理！</p>
+  <p>默认用户名/密码:   user/123  </p>
+  
+  <form ng-submit="login()" name="loginForm" class="form-horizontal">
+    <div class="control-group">
+      <label for="username" class="control-label">用户名</label>
+      <div class="controls">
+        <input type="text" ng-model="username" placeholder="Username" name="username" required="required" autofocus="autofocus"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="password" class="control-label">密码</label>
+      <div class="controls">
+        <input type="password" ng-model="password" placeholder="Password" name="password" required="required"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <label for="rememberme" class="checkbox">
+          <input type="checkbox" ng-model="rememberme" name="rememberme"/>Remember me
+        </label>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" ng-disabled="loginForm.$invalid" class="btn">Log in</button>
+      </div>
+    </div>
+  </form>
+  <hr/>
+ 
+</div>
